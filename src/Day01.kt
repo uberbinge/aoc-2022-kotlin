@@ -1,17 +1,20 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
-
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
     val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    var max = Integer.MIN_VALUE
+    var sum = 0
+    val elvesSum  = mutableListOf<Int>()
+    input.forEach {
+        if (it.toIntOrNull() != null) {
+            sum += it.toInt()
+            if (sum > max) {
+                max = sum
+            }
+        } else {
+            elvesSum.add(sum)
+            sum = 0
+        }
+    }
+    elvesSum.sortDescending()
+    println(elvesSum[0])
+    elvesSum.take(3).sum().also { println(it) }
 }
