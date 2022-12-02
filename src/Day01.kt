@@ -10,7 +10,8 @@ fun main() {
             sum = 0
         }
     }
-    elvesSum.sortDescending()
-    assert(69883 == elvesSum[0])
-    assert(207576 == elvesSum.take(3).sum())
+    val top3 =  elvesSum.sortedDescending().take(3)
+    check(69883 == top3[0])
+    check(207576 == top3.sum())
 }
+
