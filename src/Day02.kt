@@ -4,8 +4,7 @@ fun main() {
 }
 
 fun firstProblem() {
-
-    val input = readInput("Day02")
+    val input = readLines("Day02")
     var sum = 0
     val newInput = input.asSequence().map { it.replace("A", "rock") }.map { it.replace("B", "paper") }.map { it ->
         it.replace("C", "scissors")
@@ -39,7 +38,7 @@ fun firstProblem() {
 }
 
 fun secondProblem() {
-    val input = readInput("Day02")
+    val input = readLines("Day02")
     var sum = 0
     val newInput = input.asSequence().map { it.replace("A", "rock") }.map { it.replace("B", "paper") }.map { it ->
         it.replace("C", "scissors")
